@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableListComponent } from './table-list.component';
+import { TableListComponent } from './user-list.component';
 
 describe('TableListComponent', () => {
   let component: TableListComponent;
