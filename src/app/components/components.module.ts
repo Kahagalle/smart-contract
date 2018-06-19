@@ -6,10 +6,13 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
+    AngularFontAwesomeModule
   ],
   declarations: [
     FooterComponent,

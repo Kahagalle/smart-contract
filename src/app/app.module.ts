@@ -15,6 +15,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { ContractsComponent } from './contracts/contracts.component';
 
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 import {
   AgmCoreModule
 } from '@agm/core';
@@ -22,6 +24,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 
 @NgModule({
   imports: [
+    AngularFontAwesomeModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,

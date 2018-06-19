@@ -7,6 +7,7 @@ import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { UserListComponent } from '../../user-list/user-list.component';
 import { ContractsComponent } from '../../contracts/contracts.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import {
   MatButtonModule,
@@ -23,6 +24,7 @@ import {
     MatRippleModule,
     MatInputModule,
     MatTooltipModule,
+    AngularFontAwesomeModule
   ],
   declarations: [
     DashboardComponent,
