@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 
-import { DashboardComponent } from '../../dashboard/dashboard.component';
-import { UserProfileComponent } from '../../user-profile/user-profile.component';
-import { UserListComponent } from '../../user-list/user-list.component';
-import { ContractsComponent } from '../../contracts/contracts.component';
+import { DashboardComponent } from '../../pages/dashboard/dashboard.component';
+import { UserProfileComponent } from '../../pages/user-profile/user-profile.component';
+import { UserListComponent } from '../../pages/user-list/user-list.component';
+import { ContractsComponent } from '../../pages/contracts/contracts.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
