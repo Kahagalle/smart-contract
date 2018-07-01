@@ -8,16 +8,16 @@
                       <p class="card-category">Complete your profile</p>
                   </div>
                   <div class="card-body">
-                      <form>
+                      <form [formGroup]="form"  (ngSubmit)="onUserSubmit(form.value)">
                           <div class="row">
                               <div class="col-md-6">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Username">
+                                    <input matInput placeholder="Username" [formControl]="name"  name="name" id="name"  >
                                   </mat-form-field>
                               </div>
                               <div class="col-md-6">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Email address" type="email">
+                                    <input matInput placeholder="Email address" type="email" [formControl]="email"   name="email" id="email">
                                   </mat-form-field>
                               </div>
                           </div>

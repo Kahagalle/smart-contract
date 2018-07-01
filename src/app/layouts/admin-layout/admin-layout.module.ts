@@ -19,6 +19,7 @@ import {
   imports: [
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
+    ReactiveFormsModule,
     FormsModule,
     MatButtonModule,
     MatRippleModule,
