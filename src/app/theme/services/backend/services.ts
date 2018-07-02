@@ -17,6 +17,28 @@ export class MyService {
         this.adminUrl = "http://blockwork.projects.mrt.ac.lk/grant_access.php"
     }
 
+    String2Hex(str: string) {
+        let hex, i;
+
+        let result = "";
+        for (i = 0; i < str.length; i++) {
+            hex = str.charCodeAt(i).toString(16);
+            result += ("000" + hex).slice(-4);
+        }
+        return result;
+    }
+
+    Hex2String(hex_str: string) {
+        let j;
+        let hexes = hex_str.match(/.{1,4}/g) || [];
+        let result_back = "";
+        for (j = 0; j < hexes.length; j++) {
+            result_back += String.fromCharCode(parseInt(hexes[j], 16));
+        }
+
+        return result_back;
+    }
+
 
     node(): Promise<any> {
         return this.http.get(this.baseUrl + "node").toPromise()

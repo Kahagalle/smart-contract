@@ -7,6 +7,7 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/map';
 
 import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { User } from "../../theme/models/user";
 
 @Component({
   selector: 'app-user-profile',
@@ -16,9 +17,11 @@ import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/fo
 })
 export class UserProfileComponent implements OnInit {
   ChainInfo = null;
+  @Input() user: User;
   public form: FormGroup;
-  public name: AbstractControl;
+  public username: AbstractControl;
   public email: AbstractControl;
+  userStream: string = "user";
 
 
   constructor(fb: FormBuilder,private _service: MyService,private _route: ActivatedRoute, private _router: Router) { 
@@ -35,12 +38,12 @@ export class UserProfileComponent implements OnInit {
 }).catch(error => {
     console.log("error.message");
 });
-
+this.user = new User();
 this.form = fb.group({
-  'name': ['', Validators.compose([Validators.required, Validators.minLength(1)])],
+  'username': ['', Validators.compose([Validators.required, Validators.minLength(1)])],
   'email': ['', Validators.compose([Validators.required, Validators.minLength(1)])]
 });
-this.name = this.form.controls['name'];
+this.username = this.form.controls['username'];
 this.email = this.form.controls['email'];
   }
 
@@ -50,6 +53,24 @@ this.email = this.form.controls['email'];
   public onUserSubmit(values: Object): void {
     console.log("submitted");
     console.log(values);
+    console.log(this.user);
+    console.log(values);
+    let key = this.user.username;
+    let userJSON = JSON.stringify(this.user);
+    console.log(userJSON);
+
+    let data_hex = this._service.String2Hex(userJSON);
+    console.log(data_hex);
+    // console.log(this.Hex2String(data_hex));  
+
+    this._service.publishToStream(this.userStream, key, data_hex).then(data => {
+      console.log(data);
+    }).catch(error => {
+      console.log(error.message);
+    });
+
+    //this._router.navigate(['pages/admin/skill']);
+    //location.reload();
   }
 
 }
