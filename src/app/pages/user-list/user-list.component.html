@@ -4,62 +4,45 @@
           <div class="col-md-12">
               <div class="card">
                   <div class="card-header card-header-danger">
-                      <h4 class="card-title ">Simple Table</h4>
-                      <p class="card-category"> Here is a subtitle for this table</p>
+                      <h4 class="card-title ">User Data</h4>
+                      <p class="card-category"> Here is a list of items of stream</p>
                   </div>
                   <div class="card-body">
                       <div class="table-responsive">
                           <table class="table">
                               <thead class=" text-primary">
                                   <th>
-                                      ID
+                                      Username
                                   </th>
                                   <th>
-                                      Name
+                                      FirstName
                                   </th>
                                   <th>
-                                      Country
+                                      Email
                                   </th>
                                   <th>
                                       City
                                   </th>
                                   <th>
-                                      Salary
+                                      Country
                                   </th>
                               </thead>
                               <tbody>
-                                  <tr>
+                                  <tr  *ngFor="let user of users">
                                       <td>
-                                          5
+                                        {{user.username}}
                                       </td>
                                       <td>
-                                          Doris Greene
+                                          {{user.firstname}}
                                       </td>
                                       <td>
-                                          Malawi
+                                          {{user.email}}
                                       </td>
                                       <td>
-                                          Feldkirchen in Kärnten
+                                          {{user.city}}
                                       </td>
                                       <td class="text-primary">
-                                          $63,542
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          6
-                                      </td>
-                                      <td>
-                                          Mason Porter
-                                      </td>
-                                      <td>
-                                          Chile
-                                      </td>
-                                      <td>
-                                          Gloucester
-                                      </td>
-                                      <td class="text-primary">
-                                          $78,615
+                                          {{user.country}}
                                       </td>
                                   </tr>
                               </tbody>
@@ -71,43 +54,3 @@
       </div>
   </div>
 </div>
-
-<!--
-
-<table class="table table-condensed">
-    <thead>
-        <tr>
-            <th></th>
-            <th>Project</th>
-            <th>Status</th>
-            <th>Price</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let project of projects">
-            <td>
-                <br>
-                <font size="5" color="#209e91"><i class="fa fa-product-hunt"></i></font>
-            </td>
-            <td>
-                <br>
-                <a style="cursor:pointer" (click)="goToProject(project.project_id)">
-                    <h3>{{project.projectName}}</h3>
-                </a>
-                <p>{{project.description}} </p>
-                <a *ngIf="project.skills">
-                    <button *ngFor="let skill of project.skills" type="button" class="btn btn-default btn-sm"
-                     style="background-color: #776e6e;color: #ffffff;cursor:default;">{{skill}}</button>
-                </a>
-            </td>
-            <td>
-                <br>Open
-            </td>
-            <td><br>{{project.budget.min}}-{{project.budget.max}} {{project.budget.type}}</td>
-            <td>
-                <br><button type="button" class="btn btn-primary  btn-sm">Bid Now</button>
-            </td>
-        </tr>
-    </tbody>
-</table> -->
