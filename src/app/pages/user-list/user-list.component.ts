@@ -11,9 +11,12 @@ import { MyService } from "../../theme/services/backend/services";
 export class UserListComponent implements OnInit {
 
   users: User[] = [];
-  userStream: string = "user";
+  userStream: string = "users";
 
-  constructor(private _service: MyService) { }
+  constructor(private _service: MyService) { 
+    console.log("user list");
+    this.LoadUsers();
+  }
 
   ngOnInit() {
   }

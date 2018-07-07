@@ -4,8 +4,8 @@
           <div class="col-md-12">
               <div class="card">
                   <div class="card-header card-header-danger">
-                      <h4 class="card-title ">Simple Table</h4>
-                      <p class="card-category"> Here is a subtitle for this table</p>
+                      <h4 class="card-title ">User Table</h4>
+                      <p class="card-category"> Here is a list of stream items</p>
                   </div>
                   <div class="card-body">
                       <div class="table-responsive">
@@ -15,54 +15,37 @@
                                       ID
                                   </th>
                                   <th>
-                                      Name
+                                      Username
                                   </th>
                                   <th>
-                                      Country
+                                      Email
                                   </th>
                                   <th>
                                       City
                                   </th>
                                   <th>
-                                      Salary
+                                    Country
                                   </th>
                               </thead>
                               <tbody>
-                                  <tr>
-                                      <td>
-                                          5
-                                      </td>
-                                      <td>
-                                          Doris Greene
-                                      </td>
-                                      <td>
-                                          Malawi
-                                      </td>
-                                      <td>
-                                          Feldkirchen in Kärnten
-                                      </td>
-                                      <td class="text-primary">
-                                          $63,542
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                          6
-                                      </td>
-                                      <td>
-                                          Mason Porter
-                                      </td>
-                                      <td>
-                                          Chile
-                                      </td>
-                                      <td>
-                                          Gloucester
-                                      </td>
-                                      <td class="text-primary">
-                                          $78,615
-                                      </td>
-                                  </tr>
-                              </tbody>
+                                <tr  *ngFor="let user of users">
+                                    <td>
+                                      {{user.user_id}}
+                                    </td>
+                                    <td>
+                                        {{user.firstname}}
+                                    </td>
+                                    <td>
+                                        {{user.email}}
+                                    </td>
+                                    <td>
+                                        {{user.city}}
+                                    </td>
+                                    <td class="text-primary">
+                                        {{user.country}}
+                                    </td>
+                                </tr>
+                            </tbody>
                           </table>
                       </div>
                   </div>

@@ -21,7 +21,7 @@ export class UserProfileComponent implements OnInit {
   public form: FormGroup;
   public username: AbstractControl;
   public email: AbstractControl;
-  userStream: string = "user";
+  userStream: string = "users";
 
 
   constructor(fb: FormBuilder,private _service: MyService,private _route: ActivatedRoute, private _router: Router) { 
