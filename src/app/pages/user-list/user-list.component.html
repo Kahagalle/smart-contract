@@ -12,10 +12,14 @@
                           <table class="table">
                               <thead class=" text-primary">
                                   <th>
-                                      ID
+                                      Username
                                   </th>
                                   <th>
+<<<<<<< .mine
                                       Username
+=======
+                                      FirstName
+>>>>>>> .theirs
                                   </th>
                                   <th>
                                       Email
@@ -24,10 +28,15 @@
                                       City
                                   </th>
                                   <th>
+<<<<<<< .mine
                                     Country
+=======
+                                      Country
+>>>>>>> .theirs
                                   </th>
                               </thead>
                               <tbody>
+<<<<<<< .mine
                                 <tr  *ngFor="let user of users">
                                     <td>
                                       {{user.user_id}}
@@ -46,6 +55,26 @@
                                     </td>
                                 </tr>
                             </tbody>
+=======
+                                  <tr  *ngFor="let user of users">
+                                      <td>
+                                        {{user.username}}
+                                      </td>
+                                      <td>
+                                          {{user.firstname}}
+                                      </td>
+                                      <td>
+                                          {{user.email}}
+                                      </td>
+                                      <td>
+                                          {{user.city}}
+                                      </td>
+                                      <td class="text-primary">
+                                          {{user.country}}
+                                      </td>
+                                  </tr>
+                              </tbody>
+>>>>>>> .theirs
                           </table>
                       </div>
                   </div>
@@ -54,43 +83,3 @@
       </div>
   </div>
 </div>
-
-<!--
-
-<table class="table table-condensed">
-    <thead>
-        <tr>
-            <th></th>
-            <th>Project</th>
-            <th>Status</th>
-            <th>Price</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let project of projects">
-            <td>
-                <br>
-                <font size="5" color="#209e91"><i class="fa fa-product-hunt"></i></font>
-            </td>
-            <td>
-                <br>
-                <a style="cursor:pointer" (click)="goToProject(project.project_id)">
-                    <h3>{{project.projectName}}</h3>
-                </a>
-                <p>{{project.description}} </p>
-                <a *ngIf="project.skills">
-                    <button *ngFor="let skill of project.skills" type="button" class="btn btn-default btn-sm"
-                     style="background-color: #776e6e;color: #ffffff;cursor:default;">{{skill}}</button>
-                </a>
-            </td>
-            <td>
-                <br>Open
-            </td>
-            <td><br>{{project.budget.min}}-{{project.budget.max}} {{project.budget.type}}</td>
-            <td>
-                <br><button type="button" class="btn btn-primary  btn-sm">Bid Now</button>
-            </td>
-        </tr>
-    </tbody>
-</table> -->
