@@ -7,7 +7,20 @@
                         <h4 class="card-title">New Contract</h4>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form [formGroup]="form"  (ngSubmit)="onContractSubmit(form.value)">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h5 class="card-title"><b>Contract Details</b></h5>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Contract Name"  [(ngModel)]="contract.name"  [formControl]="name"  name="name" id="name">
+                                    </mat-form-field>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <h5 class="card-title"><b>Receiver Details</b></h5>
@@ -17,12 +30,12 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Username">
+                                        <input matInput placeholder="Username"  [(ngModel)]="contract.receiver" [ngModelOptions]="{standalone: true}" >
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-6">
                                     <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Email address" type="email">
+                                        <input matInput placeholder="Email address" type="email"  [(ngModel)]="contract.receiver_email" [ngModelOptions]="{standalone: true}">
                                     </mat-form-field>
                                 </div>
                             </div>
@@ -77,7 +90,7 @@
                                             <td>
                                                 <div class="form-check">
                                                     <label class="form-check-label">
-                                                        <input class="form-check-input" type="checkbox" value="" checked>
+                                                        <input class="form-check-input" type="checkbox" value="true" [(ngModel)]="contract.milestoneOne" [ngModelOptions]="{standalone: true}"  >
                                                         <span class="form-check-sign">
                                                           <span class="check"></span>
                                                       </span>
@@ -90,7 +103,7 @@
                                             <td>
                                                 <div class="form-check">
                                                     <label class="form-check-label">
-                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        <input class="form-check-input" type="checkbox" value=""  [(ngModel)]="contract.milestoneTwo" [ngModelOptions]="{standalone: true}">
                                                         <span class="form-check-sign">
                                                           <span class="check"></span>
                                                       </span>
@@ -103,7 +116,7 @@
                                             <td>
                                                 <div class="form-check">
                                                     <label class="form-check-label">
-                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        <input class="form-check-input" type="checkbox" value=""  [(ngModel)]="contract.milestoneThree" [ngModelOptions]="{standalone: true}">
                                                         <span class="form-check-sign">
                                                           <span class="check"></span>
                                                       </span>
@@ -117,7 +130,7 @@
                                             <td>
                                                 <div class="form-check">
                                                     <label class="form-check-label">
-                                                        <input class="form-check-input" type="checkbox" value="" checked>
+                                                        <input class="form-check-input" type="checkbox" value=""  [(ngModel)]="contract.milestoneFour" [ngModelOptions]="{standalone: true}" >
                                                         <span class="form-check-sign">
                                                           <span class="check"></span>
                                                       </span>
@@ -193,6 +206,14 @@
                                 </td>
                                 <td style="cursor:pointer;">Mars Contract</td>
                             </tr>
+                            <tr  *ngFor="let contract of contracts">
+                                    <td>
+                                        <div class="form-check">
+                                            <fa name="cog" animation="spin" size="2x"></fa>
+                                        </div>
+                                    </td>
+                                    <td style="cursor:pointer;">{{contract.name}} Contract</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
