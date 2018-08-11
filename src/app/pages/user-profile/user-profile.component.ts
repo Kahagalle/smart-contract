@@ -21,7 +21,7 @@ export class UserProfileComponent implements OnInit {
   public form: FormGroup;
   public username: AbstractControl;
   public email: AbstractControl;
-  userStream: string = "users";
+  userStream: string = "user";
 
 
   constructor(fb: FormBuilder,private _service: MyService,private _route: ActivatedRoute, private _router: Router) { 
@@ -69,8 +69,8 @@ this.email = this.form.controls['email'];
       console.log(error.message);
     });
 
-    //this._router.navigate(['pages/admin/skill']);
-    //location.reload();
+    this._router.navigate(['user-list']);
+   // location.reload();
   }
 
 }

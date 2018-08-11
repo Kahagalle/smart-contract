@@ -11,7 +11,7 @@ import { MyService } from "../../theme/services/backend/services";
 export class UserListComponent implements OnInit {
 
   users: User[] = [];
-  userStream: string = "users";
+  userStream: string = "user";
 
   constructor(private _service: MyService) { 
     console.log("user list");
@@ -25,7 +25,13 @@ export class UserListComponent implements OnInit {
   LoadUsers(){
     this._service.listStreamItems(this.userStream).then(data => {
       data.forEach(element => {
+        console.log(element);
+        console.log(element);
+        if(element.index == 1){
+          return;
+        }
         let user: User = JSON.parse(this._service.Hex2String(element.data.toString()));
+        console.log(user);
         user.user_id = element.txid;
         this.users.push(user);
       });
